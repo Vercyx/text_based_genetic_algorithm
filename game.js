@@ -7,14 +7,12 @@ function setup() {
   let result = '';
   
   for(i = 0; i < members; i++){
-    for(z = 0; z < target.length; z++){
-      DNA.push(chars.charAt(Math.floor(Math.random() * chars.length)))
+    for(z = 0; z < 18; z++){
+      DNA.push(chars.charAt(Math.floor(Math.random() * chars.length)));
     }
-    
-    
-    
     pop.push(DNA);
-    console.log(DNA);
+    DNA = [];
+    console.log(pop);
   }
   
   createCanvas(400, 400);
