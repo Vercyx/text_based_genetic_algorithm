@@ -1,3 +1,5 @@
+//https://github.com/nature-of-code/noc-examples-p5.js/blob/master/chp09_ga/NOC_9_01_GA_Shakespeare/sketch.js
+
 let chars = 'abcdefghijklmnopqrstuvwxyz ';
 let pop = [];
 let DNA = [];
