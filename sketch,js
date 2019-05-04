@@ -4,6 +4,10 @@ of all of the major concepts.
 
 Some ideas and small optimization details were taken directly from his p5js implementation of this. The link to the repository is here:
 https://github.com/nature-of-code/noc-examples-p5.js/blob/master/chp09_ga/NOC_9_01_GA_Shakespeare/sketch.js
+
+This algorithm takes on average ~400-900 generations and anywhere from 0-2 minutes to evolve the phrase 'to be or not to be'
+
+Comparatively, the chances of a completely random character generation doing the same thing is 1/19,928,148,895,209,409,152,340,197,376
 */
 
 let chars = 'abcdefghijklmnopqrstuvwxyz ';
