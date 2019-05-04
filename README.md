@@ -1,5 +1,15 @@
-What needs to get done:
+# Text Based Genetic Algorithm
+### Made by Vercyx
 
-First priority -
-  Code a functional snake game in javascript / python (whatever works best for us)
-  and thats it, we're done. well i'm done writing this at least cause i'm bored and want to get started on it.
+## How to use:
+* ****
+* **Head to https://editor.p5js.org/ or download the p5js framework**
+* **Copy or clone this repository**
+* **Modify the target phrase to be whatever lowercase phrase you'd like**
+* **Run sketch.js**
+
+## Other Documentation
+* ****
+* **The `mutateChance` variable determines the chance to mutate based on a 1/n format**
+* **`members` is the total amount of individuals in the population of many**
+* **`DNA` initializes as a random string of characters chosen through a random number generator and the `chars` variable**
