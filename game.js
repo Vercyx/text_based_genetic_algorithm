@@ -5,17 +5,20 @@ let pop = [];
 let DNA = [];
 let target = 'to be or not to be';
 let targetArr = target.split('');
-let members = 10;
+let members = 1000;
 let result = '';
-let fit = 0
+let fit = 0;
 let fitnessVal = [];
 let matingPool = [];
 let parentA = [];
 let parentB = [];
 let oldPop = [];
 let child = [];
-let nothing = 0
-let mutateChance = 10
+let nothing = 0;
+let mutateChance = 10;
+let generation = 0;
+let bestMem = '';
+let done = false;
 
 function setup() {
   
@@ -28,14 +31,20 @@ function setup() {
   }
   
   createCanvas(400, 400);
-  console.log(pop)
-  evalFit();
-  addToPool();
-  reproduce();
+
+
 }
 
 function draw() {
   background(220);
+  if(done == false){
+    evalFit();
+    generation++
+    findBestMember();
+    addToPool();
+    reproduce();
+    //console.log(generation)
+  }
 }
 
 
@@ -51,30 +60,28 @@ function evalFit(){
     fitnessVal.push(fit);
     fit = 0
   }
-  console.log(fitnessVal);
 }
 
 
 function addToPool(){
   matingPool = [];
  for(i = 0; i < fitnessVal.length; i++){
-   for(k = 0; k < fitnessVal[i]; k++){
+   for(k = 0; k < fitnessVal[i] * 100; k++){
      matingPool.push(pop[i]);
    }
    
  }
-console.log(matingPool);
 }
 
 
 function reproduce(){
   oldPop = pop;
   pop = [];
-  for(i = 0; i < 2; i++){
+  for(i = 0; i < members; i++){
     child = [];
     parentA[0] = matingPool[Math.floor(Math.random() * matingPool.length)];
     parentB[0] = matingPool[Math.floor(Math.random() * matingPool.length)];
-    for(j = 0; j < Math.floor(target.length)/2; j++){
+    for(j = 0; j < Math.floor(random(target.length)); j++){
       child.push(parentA[0][j]);
     }
     
@@ -83,14 +90,29 @@ function reproduce(){
 
     }
     
-    for(i = 0; i < child.length; i++){
+    for(x = 0; x < child.length; x++){
       if(Math.floor(Math.random() * mutateChance) == mutateChance - 1){
          child[i] = chars.charAt(Math.floor(Math.random() * chars.length))
-         i = child.length
          }
       
     }
     pop.push(child)
+    //console.log(child.join(''))
   }  
-  console.log(pop)
+}
+
+
+function findBestMember(){
+  for(b = 0; b < members; b++){
+    if(fitnessVal[b] == Math.max.apply(null, fitnessVal)){
+       if(pop[b].join('') == target){
+          done = true
+          
+          }
+       console.log('Generation ' + generation + ': ' + pop[b].join(''))
+       b = members
+       }
+    
+  }
+  
 }
