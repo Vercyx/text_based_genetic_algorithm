@@ -1,4 +1,10 @@
-//https://github.com/nature-of-code/noc-examples-p5.js/blob/master/chp09_ga/NOC_9_01_GA_Shakespeare/sketch.js
+/*
+Thank you to Daniel Shiffman (The Coding Train), and his series of videos on this topic, as it really helped me get a good understanding
+of all of the major concepts.
+
+Some ideas and small optimization details were taken directly from his p5js implementation of this. The link to the repository is here:
+https://github.com/nature-of-code/noc-examples-p5.js/blob/master/chp09_ga/NOC_9_01_GA_Shakespeare/sketch.js
+*/
 
 let chars = 'abcdefghijklmnopqrstuvwxyz ';
 let pop = [];
