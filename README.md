@@ -1,5 +1,5 @@
 # Text Based Genetic Algorithm
-### Made by Vercyx
+### Made by Dylan MacDonald
 
 ## How to use:
 * **Head to https://editor.p5js.org/ or download the p5js framework**
